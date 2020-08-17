@@ -11,8 +11,7 @@ const LoginForm = ({record, handleSave}) => {
         password: yup.string().required("Campo Obrigatório!")
     });
 
-    const handleSubmit = (formData, actions) => {
-        console.log('formData', formData);
+    const handleSubmit = (formData) => {
         handleSave(formData)
     };
 
@@ -31,7 +30,7 @@ const LoginForm = ({record, handleSave}) => {
                                 <InputText name={"password"} value={props.values['password']} type={'password'} onChange={props.handleChange}/>
                             </div>
                         </div>
-                        <Button label={"Log In"} className="btn btn-primary" onSubmit={props.handleSubmit}/>
+                        <Button label={"Log In"} type={"submit"} className="btn btn-primary" onSubmit={props.handleSubmit}/>
                         <a href={"/register"}>Register</a>
                     </Form>
                 }

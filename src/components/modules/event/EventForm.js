@@ -47,7 +47,7 @@ const EventForm = ({record, handleSave, handleCancel}) => {
                                 }
                             </div>
                         </div>
-                        <Button label={"Save"} className="btn btn-primary" onSubmit={props.handleSubmit}/>
+                        <Button label={"Save"} type={"submit"} className="btn btn-primary" onSubmit={props.handleSubmit}/>
                         <Button label={"Cancel"} type={"button"} className="btn btn-primary" onClick={handleCancel}/>
                     </Form>
                 }

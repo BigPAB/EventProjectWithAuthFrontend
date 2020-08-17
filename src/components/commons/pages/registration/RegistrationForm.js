@@ -36,7 +36,7 @@ const RegistrationForm = ({record, handleSave, handleCancel}) => {
                                 <InputText name={"passwordConfirmation"} value={props.values['passwordConfirmation']} type={'password'} onChange={props.handleChange}/>
                             </div>
                         </div>
-                        <Button label={"Register"} className="btn btn-primary" onSubmit={props.handleSubmit}/>
+                        <Button label={"Register"} type={"submit"}  className="btn btn-primary" onSubmit={props.handleSubmit}/>
                         <Button label={"Cancel"} type={"button"} className="btn btn-primary" onClick={handleCancel}/>
                     </Form>
                 }
