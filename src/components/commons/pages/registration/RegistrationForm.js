@@ -6,9 +6,11 @@ import {Button} from "primereact/button";
 
 const RegistrationForm = ({record, handleSave, handleCancel}) => {
     const userValidation = yup.object().shape({
-        username: yup.string().required(),
-        password: yup.string().required(),
-        passwordConfirmation: yup.string().required()
+        username: yup.string().required("Campo Obrigatório!"),
+        password: yup.string().required("Campo Obrigatório!"),
+        passwordConfirmation: yup.string("Campo Obrigatório!")
+            .oneOf([yup.ref('password')], ('Passwords do not match!'))
+            .required()
     });
 
     const handleSubmit = (formData) => {

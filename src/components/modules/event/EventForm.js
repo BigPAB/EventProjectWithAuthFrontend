@@ -12,8 +12,8 @@ const EventForm = ({record, handleSave, handleCancel}) => {
     const [users, setUsers] = useState(null);
 
     const eventValidation = yup.object().shape({
-        name: yup.string().required(),
-        user: yup.object().required()
+        name: yup.string().required("Campo Obrigatório!"),
+        user: yup.object().required("Campo Obrigatório!")
     });
 
     useEffect(() => {

@@ -3,13 +3,12 @@ import {Form, Formik} from "formik";
 import {InputText} from "primereact/inputtext";
 import {Button} from "primereact/button";
 import * as yup from 'yup'
-// import Link from "react-router-dom/modules/Link";
 
 const LoginForm = ({record, handleSave}) => {
 
     const userValidation = yup.object().shape({
-        username: yup.string().required(),
-        password: yup.string().required()
+        username: yup.string().required("Campo Obrigatório!"),
+        password: yup.string().required("Campo Obrigatório!")
     });
 
     const handleSubmit = (formData, actions) => {
