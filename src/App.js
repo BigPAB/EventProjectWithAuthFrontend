@@ -28,6 +28,9 @@ function App() {
               <BrowserRouter>
                   <Route exact path="/login" component={LoginContainer} />
                   <Route exact path="/register" component={RegistrationContainer} />
+                  <Route exact path="/"  >
+                       <Redirect to={"/event"}/>
+                  </Route>
                   <Route exact path="/event"  >
                       {token ? <EventContainer/> : <Redirect to={"/login"}/> }
                   </Route>
