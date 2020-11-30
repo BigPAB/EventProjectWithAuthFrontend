@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import LoginForm from './LoginForm'
 import axios from 'axios'
-// import {useStoreActions} from "easy-peasy";
+import {useStoreActions} from "easy-peasy";
 import {LOGIN_URL} from "../../api/url-const";
 
 
 const LoginContainer = ({history}) => {
 
-    // const sessionLogin = useStoreActions(actions => actions.loginStore)
+    const { sessionLogin } = useStoreActions(actions => actions.loginStore)
 
     const initialState = {
         username: "",
@@ -19,8 +19,7 @@ const LoginContainer = ({history}) => {
 
         const successLogin = (response) => {
             if (response.data.jwttoken !== undefined) {
-                // sessionLogin(response.data.jwttoken);
-                sessionStorage.setItem("2", response.data.jwttoken)
+                sessionLogin(response.data.jwttoken);
                 history.push("/event");
             }
         };
